@@ -1,0 +1,29 @@
+@font-face {
+    font-face-name: 'UltraBlack';
+    font-family: 'JoannaNova-UltraBlack';
+    src: url("Joanna/JOANNA_courrier/JoannaNova-UltraBlackItalic.otf");
+}
+
+@font-face {
+    font-face-name: 'Light';
+    font-family: 'JoannaNova-Light';
+    src: url("Joanna/JOANNA_courrier/JoannaNova-Light.otf");
+}
+
+@font-face {
+    font-face-name: 'Medium';
+    font-family: 'JoannaNova-Medium';
+    src: url("Joanna/JOANNA_courrier/JoannaNova-Medium.otf");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: JoannaNova-UltraBlack, serif;
+}
+
+body, section, div, aside, article {
+    font-family: JoannaNova-Light, serif;
+}
+
+button {
+    font-family: JoannaNova-Medium, serif;
+}
