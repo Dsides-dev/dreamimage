@@ -3,6 +3,35 @@
 {% block body %}
     <h1 class="text-center m-3 h1">{{ title }}</h1>
     <div class="container">
-        <h2>QR code</h2>
+        {% if images %}
+        {% for image in images %}
+            <a class="link-offset-2 link-underline link-underline-opacity-0" href="{{ path('app_view_detail', {'slug': image.slug}) }}">
+                <div class="carte card border-0 mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ asset('upload/' ~ image.imagefilename ) }}" class="img-fluid rounded" alt="{{ image.title }}">
+                        </div>
+                        <div class="col-md-8 align-self-center">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h5 class="card-title">{{ image.title }}</h5>
+                                        <p class="card-text text-truncate">{{ image.description }}</p>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="card-text">
+                                            <img class="w-50 d-block mx-auto" src="{{ asset('img/qrcode/' ~ image.slug ~'.png') }}" alt="{{ image.title }}">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        {% else %}
+            <p>Pas d'image pour le moment</p>
+        {% endif %}
     </div>
 {% endblock %}

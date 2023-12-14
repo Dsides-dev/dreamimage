@@ -2,7 +2,10 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Votre image de rêve{% endblock %}</title>
+        <link rel="icon" type="image/png" href="{{ asset('/img/favicon_light.jpg') }}" />
         {% block stylesheets %}{% endblock %}
             {{ encore_entry_link_tags('app') }}
 
@@ -12,8 +15,12 @@
         {% endblock %}
     </head>
     <body>
+    {% block toast %}
+        {# include 'includes/_toast.html.twig' #}
+    {% endblock %}
     <div class="container-fluid">
         {% block body %}{% endblock %}
+        
     </div>
     </body>
 </html>

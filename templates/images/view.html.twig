@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() ~' | '~ slug.slug }}{% endblock %}
+{% block body %}
+	<div class="container p-5">
+		<div class="card border-0 mb-3">
+			<div class="row g-0">
+				<div class="col-md-3">
+					<img src="{{ asset('upload/' ~ slug.imagefilename ) }}" class="img-fluid rounded" alt="...">
+				</div>
+				<div class="col-md-9 align-self-center">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-6">
+								<h5 class="card-title">{{ slug.title }}</h5>
+								<p class="card-text">{{ slug.description }}</p>
+							</div>
+							<div class="col-md-6">
+								<p class="card-text">
+									{% if slug.isVote %}
+									
+									{% elseif slug.isDecline %}
+									{% else %}
+										<img class="w-50 d-block mx-auto" src="{{ asset('img/qrcode/' ~ slug.slug ~'.png') }}" alt="{{ slug.title }}">
+									{% endif %}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

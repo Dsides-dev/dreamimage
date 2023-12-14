@@ -7,3 +7,6 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+let option = {};
+const toastElList = document.querySelectorAll('.toast')
+const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option));

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container align-self-center">
+		<h1 class="m-4 text-center">Ajouter une nouvelle image</h1>
+		{{ form_start(form, {attr: {'class': 'w-75 m-auto'}}) }}
+			{{ form_row(form.title) }}
+			{{ form_row(form.imagefile) }}
+			{{ form_row(form.slug) }}
+			{{ form_row(form.description) }}
+			<div class="d-grid gap-2 col-6 mx-auto my-5">
+				<button type="submit" class="btn btn-dark">Enregistrer</button>
+			</div>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
+
